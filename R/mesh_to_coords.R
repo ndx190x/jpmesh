@@ -1,12 +1,12 @@
 #' @title Get from mesh code to latitude and longitude
 #' 
 #' @description mesh centroid
-#' @param meshcode `integer`. mesh code
+#' @param meshcode `character`. mesh code
 #' @param ... other parameters
 #' @references Akio Takenaka: [http://takenaka-akio.org/etc/j_map/index.html](http://takenaka-akio.org/etc/j_map/index.html)
 #' @seealso [coords_to_mesh()] for convert from coordinates to meshcode
 #' @examples
-#' mesh_to_coords(64414277)
+#' mesh_to_coords("64414277")
 #' @export
 mesh_to_coords <- function(meshcode, ...) {
   if (rlang::is_false(is_meshcode(meshcode)))
@@ -23,6 +23,9 @@ mesh_to_coords <- function(meshcode, ...) {
     code6 <- as.numeric(substring(meshcode, 6, 6))
     lat_width  <- lat_width / 8
     long_width <- long_width / 8
+  }
+  if (size == units::as_units(5, "km")) {
+    km5_code7 <- as.numeric(substring(meshcode, 7, 7))
   }
   if (size <= units::as_units(1, "km")) {
     code7 <- as.numeric(substring(meshcode, 7, 7))
@@ -79,6 +82,8 @@ mesh_to_coords <- function(meshcode, ...) {
     res <- df
     return(res)
   }
+  if (exists("km5_code7"))
+    res <- finename_centroid(res, km5_code7)
   if (exists("code9"))
     res <- finename_centroid(res, code9)
   if (exists("code10"))
