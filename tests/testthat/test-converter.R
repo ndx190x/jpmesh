@@ -1,29 +1,47 @@
-test_that("scale-down works", {
-  res <- mesh_convert(meshcode = 5235, to_mesh_size = 10)
+test_that("scale up", {
+  res <- mesh_convert(meshcode = "52350432", to_mesh_size = 80)
+  expect_equal(res, "5235")
+  res <- mesh_convert("36536166", to_mesh_size = 10)
+  expect_equal(res,
+               mesh_convert(res, to_mesh_size = 10))
+  res <- mesh_convert("52350432", to_mesh_size = 10)
+  expect_equal(mesh_size(res), units::as_units(10, "km"))
+  res_area <- res %>%
+    export_meshes() %>%
+    sf::st_area()
+  expect_equal(res_area,
+               units::as_units(10000000, "m2"),
+               tolerance = 0.906)
+  meshcode <- "52350432"
+  expect_identical(meshcode,
+                   mesh_convert(meshcode, 1))
+})
+test_that("scale down", {
+  res <- mesh_convert("36536166", 0.5)
+  expect_equal(
+    res,
+    fine_separate("36536166"))
+  expect_equal(
+    res,
+    mesh_convert("36536166"))
+  res <- mesh_convert("52350432", 0.250)
+  expect_length(res, 16L)
+  res <- mesh_convert(meshcode = "52350432", 0.125)
+  res_area <- res %>%
+    export_meshes() %>%
+    sf::st_union() %>%
+    sf::st_area()
   expect_length(res, 64L)
-  expect_is(res, "character")
-  expect_identical(res, fine_separate(5235))
-  expect_equal(res, mesh_convert(5235, to_mesh_size = NULL))
-  expect_length(mesh_convert(meshcode = 523511, to_mesh_size = 1), 100L)
-  expect_length(mesh_convert(meshcode = 5235, to_mesh_size = 1), 6400L)
-  res <- mesh_convert(meshcode = 52351114, to_mesh_size = 0.5)
-  expect_length(res, 4L)
-  expect_identical(res, c(paste0(52351114, seq_len(4))))
-  expect_length(mesh_convert(meshcode = 52351114, to_mesh_size = 0.5), 4L)
-  expect_equal(mesh_convert(meshcode = 52351114, to_mesh_size = 0.5),
-               mesh_convert(meshcode = 52351114))
-  expect_length(mesh_convert(meshcode = 523511141, to_mesh_size = 0.25), 16L)
-  expect_length(mesh_convert(meshcode = 523511141), 16L)
-  expect_length(mesh_convert(meshcode = 52351114, to_mesh_size = 0.125), 64L)
-  expect_length(mesh_convert(meshcode = 523511, to_mesh_size = 0.125), 6400L)
-  res <- mesh_convert(meshcode = 52351114, to_mesh_size = 0.1)
-  expect_length(res, 100L)
-  res <- mesh_convert(meshcode = 523511, to_mesh_size = 0.1)
-  expect_length(res, 10000L)
-  res <- mesh_convert(meshcode = 523511, to_mesh_size = 80)
-  expect_is(res, "character")
-  expect_equal(res, mesh_convert(meshcode = 523511, scale_down = FALSE))
-  expect_equal(res, substr(523511, 1, 4))
-  expect_equal(mesh_convert(64441143, 10), "644411")
-  expect_equal(mesh_convert(64441143, 80), "6444")
+  expect_equal(res_area,
+               units::as_units(100000, "m2"),
+               tolerance = 0.906)
+  meshcode <- "523504323"
+  expect_equal(mesh_convert(meshcode, 0.250),
+               paste0(meshcode, seq_len(4)))
+})
+
+test_that("bad request", {
+  expect_message(mesh_convert("523", to_mesh_size = 0.125))
+  expect_equal(suppressMessages(mesh_convert("523", to_mesh_size = 0.125)),
+               NA_character_)
 })
