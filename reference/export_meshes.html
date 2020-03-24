@@ -8,23 +8,36 @@
 
 <title>Export meshcode to geometry — export_meshes • jpmesh</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,12 +45,11 @@
 
 
 
+
 <meta property="og:title" content="Export meshcode to geometry — export_meshes" />
-
 <meta property="og:description" content="Convert and export meshcode area to sf." />
-
 <meta property="og:image" content="https://uribo.github.io/jpmesh/logo.png" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -51,9 +63,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -101,7 +114,6 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/uribo/jpmesh">
@@ -116,33 +128,42 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Export meshcode to geometry</h1>
-    
+    <small class="dont-index">Source: <a href='https://github.com/uribo/jpmesh/blob/master/R/export_mesh.R'><code>R/export_mesh.R</code></a></small>
     <div class="hidden name"><code>export_meshes.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    
     <p>Convert and export meshcode area to <code>sf</code>.</p>
-    
     </div>
 
-    <pre class="usage"><span class='fu'>export_meshes</span>(<span class='no'>meshes</span>)</pre>
-    
+    <pre class="usage"><span class='fu'>export_meshes</span>(<span class='no'>meshcode</span>)
+
+<span class='fu'>meshcode_sf</span>(<span class='no'>data</span>, <span class='no'>mesh_var</span>)</pre>
+
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>meshes</th>
-      <td><p>mesh code sets</p></td>
+      <th>meshcode</th>
+      <td><p><code>character</code>. mesh code</p></td>
+    </tr>
+    <tr>
+      <th>data</th>
+      <td><p>data frmae</p></td>
+    </tr>
+    <tr>
+      <th>mesh_var</th>
+      <td><p>unquoted expressions for meshcode variable.</p></td>
     </tr>
     </table>
-    
+
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='fu'>export_meshes</span>(<span class='st'>"4128"</span>)</div><div class='output co'>#&gt; Simple feature collection with 1 feature and 1 field
@@ -154,21 +175,48 @@
 #&gt; <span style='color: #555555;'># A tibble: 1 x 2</span><span>
 #&gt;   meshcode                                                     geometry
 #&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                                   </span><span style='color: #555555;font-style: italic;'>&lt;POLYGON [°]&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span> 4128     ((128 27.33333, 129 27.33333, 129 28, 128 28, 128 27.33333))</div></span><span class='co'># NOT RUN {</span>
-<span class='fu'>find_neighbor_mesh</span>(<span class='fl'>37250395</span>) <span class='kw'>%&gt;%</span>
-  <span class='fu'>export_meshes</span>()
-<span class='co'># }</span></pre>
+#&gt; </span><span style='color: #555555;'>1</span><span> 4128     ((128 27.33333, 129 27.33333, 129 28, 128 28, 128 27.33333))</div><div class='input'><span class='fu'><a href='neighbor_mesh.html'>find_neighbor_mesh</a></span>(<span class='st'>"37250395"</span>) <span class='kw'>%&gt;%</span>
+  <span class='fu'>export_meshes</span>()</div><div class='output co'>#&gt; Simple feature collection with 9 features and 1 field
+#&gt; geometry type:  POLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: 125.425 ymin: 24.73333 xmax: 125.4625 ymax: 24.75833
+#&gt; epsg (SRID):    4326
+#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#&gt; </span><span style='color: #555555;'># A tibble: 9 x 2</span><span>
+#&gt;   meshcode                                                              geometry
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                                            </span><span style='color: #555555;font-style: italic;'>&lt;POLYGON [°]&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span> 37250384 ((125.425 24.73333, 125.4375 24.73333, 125.4375 24.74167, 125.425 24…
+#&gt; </span><span style='color: #555555;'>2</span><span> 37250385 ((125.4375 24.73333, 125.45 24.73333, 125.45 24.74167, 125.4375 24.7…
+#&gt; </span><span style='color: #555555;'>3</span><span> 37250386 ((125.45 24.73333, 125.4625 24.73333, 125.4625 24.74167, 125.45 24.7…
+#&gt; </span><span style='color: #555555;'>4</span><span> 37250394 ((125.425 24.74167, 125.4375 24.74167, 125.4375 24.75, 125.425 24.75…
+#&gt; </span><span style='color: #555555;'>5</span><span> 37250395 ((125.4375 24.74167, 125.45 24.74167, 125.45 24.75, 125.4375 24.75, …
+#&gt; </span><span style='color: #555555;'>6</span><span> 37250396 ((125.45 24.74167, 125.4625 24.74167, 125.4625 24.75, 125.45 24.75, …
+#&gt; </span><span style='color: #555555;'>7</span><span> 37251304 ((125.425 24.75, 125.4375 24.75, 125.4375 24.75833, 125.425 24.75833…
+#&gt; </span><span style='color: #555555;'>8</span><span> 37251305 ((125.4375 24.75, 125.45 24.75, 125.45 24.75833, 125.4375 24.75833, …
+#&gt; </span><span style='color: #555555;'>9</span><span> 37251306 ((125.45 24.75, 125.4625 24.75, 125.4625 24.75833, 125.45 24.75833, …</div><div class='input'><span class='no'>d</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>id</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq.int</a></span>(<span class='fl'>4</span>),
+            <span class='kw'>meshcode</span> <span class='kw'>=</span> <span class='fu'><a href='rmesh.html'>rmesh</a></span>(<span class='fl'>4</span>),
+            <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)
+<span class='fu'>meshcode_sf</span>(<span class='no'>d</span>, <span class='no'>meshcode</span>)</div><div class='output co'>#&gt; Simple feature collection with 4 features and 2 fields
+#&gt; geometry type:  POLYGON
+#&gt; dimension:      XY
+#&gt; bbox:           xmin: 129.9875 ymin: 32.41667 xmax: 140.5625 ymax: 42.91667
+#&gt; epsg (SRID):    4326
+#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
+#&gt; </span><span style='color: #555555;'># A tibble: 4 x 3</span><span>
+#&gt;      id meshcode                                                        geometry
+#&gt;   </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;chr&gt;</span><span>                                                      </span><span style='color: #555555;font-style: italic;'>&lt;POLYGON [°]&gt;</span><span>
+#&gt; </span><span style='color: #555555;'>1</span><span>     1 60403310 ((140.375 40.25833, 140.3875 40.25833, 140.3875 40.26667, 140.…
+#&gt; </span><span style='color: #555555;'>2</span><span>     2 56371798 ((137.975 37.49167, 137.9875 37.49167, 137.9875 37.5, 137.975 …
+#&gt; </span><span style='color: #555555;'>3</span><span>     3 48295709 ((129.9875 32.41667, 130 32.41667, 130 32.425, 129.9875 32.425…
+#&gt; </span><span style='color: #555555;'>4</span><span>     4 64402494 ((140.55 42.90833, 140.5625 42.90833, 140.5625 42.91667, 140.5…</div></span></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-            
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -176,13 +224,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

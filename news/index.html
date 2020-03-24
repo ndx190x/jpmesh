@@ -8,23 +8,36 @@
 
 <title>Changelog • jpmesh</title>
 
+<!-- favicons -->
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png" />
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png" />
+
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -32,10 +45,10 @@
 
 
 
-<meta property="og:title" content="Changelog" />
 
+<meta property="og:title" content="Changelog" />
 <meta property="og:image" content="https://uribo.github.io/jpmesh/logo.png" />
-<meta name="twitter:card" content="summary" />
+
 
 
 
@@ -49,9 +62,10 @@
 <![endif]-->
 
 
+
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-news">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -99,7 +113,6 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/uribo/jpmesh">
@@ -114,57 +127,83 @@
 </div><!--/.navbar -->
 
       
+
       </header>
 
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Changelog <small></small></h1>
-      
+      <h1 data-toc-skip>Changelog <small></small></h1>
+      <small>Source: <a href='https://github.com/uribo/jpmesh/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
-    <div id="jpmesh-1-1-3-2019-05-09" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-1-3-2019-05-09" class="anchor"></a>jpmesh 1.1.3 (2019-05-09)<small> 2019-05-09 </small>
+    <div id="jpmesh-development-version" class="section level1">
+<h1 class="page-header" data-toc-text="development version">
+<a href="#jpmesh-development-version" class="anchor"></a>jpmesh (development version)<small> Unreleased </small>
+</h1>
+<ul>
+<li>API changes to functions that take <code>mesh_size</code> (<a href="https://github.com/uribo/jpmesh/issues/35"><a href='https://github.com/uribo/jpmesh/issues/35'>#35</a></a>). It has been changed to a numeric value in km unit instead of the mesh size string.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">141.3468</span>, <span class="fl">43.06462</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="st">"10km"</span>)</pre></div>
+<p>to</p>
+<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">141.3468</span>, <span class="fl">43.06462</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></div>
+<ul>
+<li>Add <code><a href="../reference/converter.html">mesh_convert()</a></code> that mesh size can be changed freely.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="r"><span class="co"># Scale up</span>
+<span class="fu"><a href="../reference/converter.html">mesh_convert</a></span>(<span class="st">"52350432"</span>, <span class="fl">80</span>)
+<span class="co"># Scale down</span>
+<span class="fu"><a href="../reference/converter.html">mesh_convert</a></span>(<span class="st">"52350432"</span>, <span class="fl">0.500</span>)</pre></div>
+<div id="improvement" class="section level2">
+<h2 class="hasAnchor">
+<a href="#improvement" class="anchor"></a>Improvement</h2>
+<ul>
+<li>Add image test</li>
+</ul>
+</div>
+</div>
+    <div id="jpmesh-113-2019-05-09" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.3">
+<a href="#jpmesh-113-2019-05-09" class="anchor"></a>jpmesh 1.1.3 (2019-05-09)<small> 2019-05-09 </small>
 </h1>
 <ul>
 <li>Fix R version test.</li>
 </ul>
 </div>
-    <div id="jpmesh-1-1-2-2019-03-20" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-1-2-2019-03-20" class="anchor"></a>jpmesh 1.1.2 (2019-03-20)<small> 2019-03-20 </small>
+    <div id="jpmesh-112-2019-03-20" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.2">
+<a href="#jpmesh-112-2019-03-20" class="anchor"></a>jpmesh 1.1.2 (2019-03-20)<small> 2019-03-20 </small>
 </h1>
 <ul>
 <li>Fix devel version’s test.</li>
 </ul>
 </div>
-    <div id="jpmesh-1-1-1-2018-06-26" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-1-1-2018-06-26" class="anchor"></a>jpmesh 1.1.1 (2018-06-26)<small> 2018-06-26 </small>
+    <div id="jpmesh-111-2018-06-26" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.1">
+<a href="#jpmesh-111-2018-06-26" class="anchor"></a>jpmesh 1.1.1 (2018-06-26)<small> 2018-06-26 </small>
 </h1>
 <ul>
 <li>Withdrawal from the tidyverse. Remove depends on stringr, tidyr and dplyr.</li>
 <li>Follow up the units package update.</li>
-<li>Fixed overlapped probrem (<a href="https://github.com/uribo/jpmesh/issues/20">#20</a>)</li>
+<li>Fixed overlapped probrem (<a href="https://github.com/uribo/jpmesh/issues/20"><a href='https://github.com/uribo/jpmesh/issues/20'>#20</a></a>)</li>
 </ul>
-<div id="new-features" class="section level3">
-<h3 class="hasAnchor">
-<a href="#new-features" class="anchor"></a>New features</h3>
+<div id="new-features" class="section level2">
+<h2 class="hasAnchor">
+<a href="#new-features" class="anchor"></a>New features</h2>
 <ul>
 <li>
-<code><a href="../reference/coarse_gather.html">coarse_gather()</a></code>… Scale-down function <a href="https://github.com/uribo/jpmesh/issues/22">#22</a>
+<code><a href="../reference/coarse_gather.html">coarse_gather()</a></code>… Scale-down function <a href="https://github.com/uribo/jpmesh/issues/22"><a href='https://github.com/uribo/jpmesh/issues/22'>#22</a></a>
 </li>
 </ul>
 </div>
 </div>
-    <div id="jpmesh-1-1-0-2018-02-25" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-1-0-2018-02-25" class="anchor"></a>jpmesh 1.1.0 (2018-02-25)<small> 2018-02-25 </small>
+    <div id="jpmesh-110-2018-02-25" class="section level1">
+<h1 class="page-header" data-toc-text="1.1.0">
+<a href="#jpmesh-110-2018-02-25" class="anchor"></a>jpmesh 1.1.0 (2018-02-25)<small> 2018-02-25 </small>
 </h1>
 <ul>
-<li>Support units system (<a href="https://github.com/uribo/jpmesh/issues/15">#15</a>)</li>
-<li>Bug fixed (<a href="https://github.com/uribo/jpmesh/issues/13">#13</a>)</li>
+<li>Support units system (<a href="https://github.com/uribo/jpmesh/issues/15"><a href='https://github.com/uribo/jpmesh/issues/15'>#15</a></a>)</li>
+<li>Bug fixed (<a href="https://github.com/uribo/jpmesh/issues/13"><a href='https://github.com/uribo/jpmesh/issues/13'>#13</a></a>)</li>
 <li>All return mesh code should be character.</li>
 <li>Set sf object espg as <code>4326</code>.</li>
 </ul>
@@ -176,14 +215,14 @@
 <code><a href="../reference/is_mesh.html">is_meshcode()</a></code>, <code><a href="../reference/is_mesh.html">is_corner()</a></code>… Predict meshcode format and positions for utility and certain.</li>
 <li>
 <code><a href="../reference/rmesh.html">rmesh()</a></code>…</li>
-<li>Rename <code>find_neighbor_mesh()</code> to <code><a href="../reference/neighbor_mesh.html">neighbor_mesh()</a></code> and separate features (not export functions).</li>
+<li>Rename <code><a href="../reference/neighbor_mesh.html">find_neighbor_mesh()</a></code> to <code><a href="../reference/neighbor_mesh.html">neighbor_mesh()</a></code> and separate features (not export functions).</li>
 <li><code><a href="../reference/export_meshes.html">export_meshes()</a></code></li>
 </ul>
 </div>
 </div>
-    <div id="jpmesh-1-0-1-2017-12-04" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-0-1-2017-12-04" class="anchor"></a>jpmesh 1.0.1 (2017-12-04)<small> 2017-12-04 </small>
+    <div id="jpmesh-101-2017-12-04" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.1">
+<a href="#jpmesh-101-2017-12-04" class="anchor"></a>jpmesh 1.0.1 (2017-12-04)<small> 2017-12-04 </small>
 </h1>
 <ul>
 <li>add vignettes 1: How to use mesh cord in R</li>
@@ -192,21 +231,21 @@
 <h2 class="hasAnchor">
 <a href="#bug-fixes-and-minor-improvements" class="anchor"></a>Bug fixes and minor improvements</h2>
 <ul>
-<li>Fixed incorrect allocation of fine mesh code number (<a href="https://github.com/uribo/jpmesh/issues/8">#8</a>).</li>
+<li>Fixed incorrect allocation of fine mesh code number (<a href="https://github.com/uribo/jpmesh/issues/8"><a href='https://github.com/uribo/jpmesh/issues/8'>#8</a></a>).</li>
 <li>Modified <code><a href="../reference/eval_jp_boundary.html">eval_jp_boundary()</a></code> that internal function.
 <ul>
 <li>Add … parameters to pass additional arguments.</li>
-<li>Improved problem of giving mesh code outside of Japan (reopen <a href="https://github.com/uribo/jpmesh/issues/6">#6</a>).</li>
+<li>Improved problem of giving mesh code outside of Japan (reopen <a href="https://github.com/uribo/jpmesh/issues/6"><a href='https://github.com/uribo/jpmesh/issues/6'>#6</a></a>).</li>
 </ul>
 </li>
 <li>
-<code><a href="../reference/fine_separate.html">fine_separate()</a></code>… Correct behavior when entering 1 km meshcode (<a href="https://github.com/uribo/jpmesh/issues/9">#9</a>).</li>
+<code><a href="../reference/fine_separate.html">fine_separate()</a></code>… Correct behavior when entering 1 km meshcode (<a href="https://github.com/uribo/jpmesh/issues/9"><a href='https://github.com/uribo/jpmesh/issues/9'>#9</a></a>).</li>
 </ul>
 </div>
 </div>
-    <div id="jpmesh-1-0-0-2017-11-27" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-1-0-0-2017-11-27" class="anchor"></a>jpmesh 1.0.0 (2017-11-27)<small> 2017-11-26 </small>
+    <div id="jpmesh-100-2017-11-27" class="section level1">
+<h1 class="page-header" data-toc-text="1.0.0">
+<a href="#jpmesh-100-2017-11-27" class="anchor"></a>jpmesh 1.0.0 (2017-11-27)<small> 2017-11-26 </small>
 </h1>
 <ul>
 <li>Consolidation of functions by integration and abolition. Rename of function name. Such as, argument order.</li>
@@ -214,9 +253,9 @@
 <li>Update Polygon Export Function (<code>export_mesh</code>)</li>
 </ul>
 </div>
-    <div id="jpmesh-0-4-0-2017-09-01" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-0-4-0-2017-09-01" class="anchor"></a>jpmesh 0.4.0 (2017-09-01)<small> 2017-09-29 </small>
+    <div id="jpmesh-040-2017-09-01" class="section level1">
+<h1 class="page-header" data-toc-text="0.4.0">
+<a href="#jpmesh-040-2017-09-01" class="anchor"></a>jpmesh 0.4.0 (2017-09-01)<small> 2017-09-29 </small>
 </h1>
 <ul>
 <li>Using sf api.</li>
@@ -227,37 +266,37 @@
 <li><code>prefecture_mesh</code></li>
 </ul>
 </li>
-<li>Enhanced CI and coverage environment (#5).</li>
-<li>Fix some issues (#6).</li>
+<li>Enhanced CI and coverage environment (<a href='https://github.com/uribo/jpmesh/issues/5'>#5</a>).</li>
+<li>Fix some issues (<a href='https://github.com/uribo/jpmesh/issues/6'>#6</a>).</li>
 <li>Add new functions
 <ul>
 <li>
 <code>pref_mesh()</code> replicate to <code><a href="../reference/administration_mesh.html">administration_mesh()</a></code>
 </li>
 <li>
-<code>find_neighbor_mesh()</code>… Find out neighborhood meshes.</li>
+<code><a href="../reference/neighbor_mesh.html">find_neighbor_mesh()</a></code>… Find out neighborhood meshes.</li>
 <li>
 <code>mesh_rectangle()</code>… Output mesh rectange.</li>
 </ul>
 </li>
 </ul>
 </div>
-    <div id="jpmesh-0-3-0-2016-11-12" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-0-3-0-2016-11-12" class="anchor"></a>jpmesh 0.3.0 (2016-11-12)<small> 2016-11-12 </small>
+    <div id="jpmesh-030-2016-11-12" class="section level1">
+<h1 class="page-header" data-toc-text="0.3.0">
+<a href="#jpmesh-030-2016-11-12" class="anchor"></a>jpmesh 0.3.0 (2016-11-12)<small> 2016-11-12 </small>
 </h1>
 <div id="new-features-2" class="section level2">
 <h2 class="hasAnchor">
 <a href="#new-features-2" class="anchor"></a>New Features</h2>
 <ul>
-<li>Mesh viewer as shiny gadgets (<code><a href="../reference/mesh_viewer.html">mesh_viewer()</a></code>) #4</li>
-<li>Export mesh rectangle as geojson (<code><a href="../reference/export_mesh.html">export_mesh()</a></code>) #3</li>
+<li>Mesh viewer as shiny gadgets (<code><a href="../reference/mesh_viewer.html">mesh_viewer()</a></code>) <a href='https://github.com/uribo/jpmesh/issues/4'>#4</a></li>
+<li>Export mesh rectangle as geojson (<code><a href="../reference/export_mesh.html">export_mesh()</a></code>) <a href='https://github.com/uribo/jpmesh/issues/3'>#3</a></li>
 </ul>
 </div>
 </div>
-    <div id="jpmesh-0-2-0" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-0-2-0" class="anchor"></a>jpmesh 0.2.0<small> Unreleased </small>
+    <div id="jpmesh-020" class="section level1">
+<h1 class="page-header" data-toc-text="0.2.0">
+<a href="#jpmesh-020" class="anchor"></a>jpmesh 0.2.0<small> Unreleased </small>
 </h1>
 <div id="new-features-3" class="section level2">
 <h2 class="hasAnchor">
@@ -274,9 +313,9 @@
 </ul>
 </div>
 </div>
-    <div id="jpmesh-0-1-0" class="section level1">
-<h1 class="page-header">
-<a href="#jpmesh-0-1-0" class="anchor"></a>jpmesh 0.1.0<small> Unreleased </small>
+    <div id="jpmesh-010" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.0">
+<a href="#jpmesh-010" class="anchor"></a>jpmesh 0.1.0<small> Unreleased </small>
 </h1>
 <ul>
 <li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
@@ -285,25 +324,14 @@
 </div>
   </div>
 
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <div id="tocnav">
-      <h2>Contents</h2>
-      <ul class="nav nav-pills nav-stacked">
-        <li><a href="#jpmesh-1-1-3-2019-05-09">1.1.3</a></li>
-        <li><a href="#jpmesh-1-1-2-2019-03-20">1.1.2</a></li>
-        <li><a href="#jpmesh-1-1-1-2018-06-26">1.1.1</a></li>
-        <li><a href="#jpmesh-1-1-0-2018-02-25">1.1.0</a></li>
-        <li><a href="#jpmesh-1-0-1-2017-12-04">1.0.1</a></li>
-        <li><a href="#jpmesh-1-0-0-2017-11-27">1.0.0</a></li>
-        <li><a href="#jpmesh-0-4-0-2017-09-01">0.4.0</a></li>
-        <li><a href="#jpmesh-0-3-0-2016-11-12">0.3.0</a></li>
-        <li><a href="#jpmesh-0-2-0">0.2.0</a></li>
-        <li><a href="#jpmesh-0-1-0">0.1.0</a></li>
-      </ul>
-    </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 
 </div>
+
 
       <footer>
       <div class="copyright">
@@ -311,13 +339,16 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9100.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
 </div>
+
       </footer>
    </div>
 
   
 
+
   </body>
 </html>
+
 

@@ -10,6 +10,9 @@
     <loc>https://uribo.github.io/jpmesh/reference/coarse_gather.html</loc>
   </url>
   <url>
+    <loc>https://uribo.github.io/jpmesh/reference/converter.html</loc>
+  </url>
+  <url>
     <loc>https://uribo.github.io/jpmesh/reference/coords_to_mesh.html</loc>
   </url>
   <url>
@@ -32,6 +35,9 @@
   </url>
   <url>
     <loc>https://uribo.github.io/jpmesh/reference/jpnrect.html</loc>
+  </url>
+  <url>
+    <loc>https://uribo.github.io/jpmesh/reference/mesh_size.html</loc>
   </url>
   <url>
     <loc>https://uribo.github.io/jpmesh/reference/mesh_to_coords.html</loc>
