@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">jpmesh</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1.9000</span>
       </span>
     </div>
 
@@ -95,7 +95,7 @@
       <h1 data-toc-skip>How to use mesh cord in R</h1>
                         <h4 class="author">Shinya Uryu</h4>
             
-            <h4 class="date">2020-03-24</h4>
+            <h4 class="date">2020-06-02</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/uribo/jpmesh/blob/master/vignettes/usage.Rmd"><code>vignettes/usage.Rmd</code></a></small>
       <div class="hidden name"><code>usage.Rmd</code></div>
@@ -134,22 +134,23 @@
 ## 1       134.       34.7   0.00625   0.00417</code></pre>
 <p>得られるメッシュの領域データを使ってメッシュのポリゴンを作成する例です。</p>
 <div class="sourceCode" id="cb8"><html><body><pre class="r"><span class="fu"><a href="../reference/export_mesh.html">export_mesh</a></span>(<span class="fl">5133778311</span>)</pre></body></html></div>
+<pre><code>## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar</code></pre>
 <pre><code>## Geometry set for 1 feature 
 ## geometry type:  POLYGON
 ## dimension:      XY
 ## bbox:           xmin: 133.9125 ymin: 34.65 xmax: 133.9156 ymax: 34.65208
-## epsg (SRID):    4326
-## proj4string:    +proj=longlat +datum=WGS84 +no_defs</code></pre>
+## CRS:            EPSG:4326</code></pre>
 <pre><code>## POLYGON ((133.9125 34.65, 133.9156 34.65, 133.9...</code></pre>
 <p>緯度経度から地域メッシュを得ることもできます。これには<code><a href="../reference/coords_to_mesh.html">coords_to_mesh()</a></code>を利用します。引数に緯度と経度を与え、取得対象のメッシュコードの大きさを指定します。メッシュコードの大きさの初期値は標準地域メッシュ、すなわち1kmメッシュです。</p>
-<div class="sourceCode" id="cb11"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb12"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>)</pre></body></html></div>
 <pre><code>## [1] "51330000"</code></pre>
-<div class="sourceCode" id="cb13"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb14"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>)</pre></body></html></div>
 <pre><code>## [1] "5133"</code></pre>
-<div class="sourceCode" id="cb15"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">0.125</span>)</pre></body></html></div>
+<div class="sourceCode" id="cb16"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">0.125</span>)</pre></body></html></div>
 <pre><code>## [1] "51330000111"</code></pre>
 <p>また対象の地域メッシュ内に含まれる緯度経度からスケールダウンした地域メッシュや、隣接するメッシュコードを得ることができます。</p>
-<div class="sourceCode" id="cb17"><html><body><pre class="r"><span class="co"># 80kmメッシュに含まれる10kmメッシュを返します</span>
+<div class="sourceCode" id="cb18"><html><body><pre class="r"><span class="co"># 80kmメッシュに含まれる10kmメッシュを返します</span>
 <span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="../reference/fine_separate.html">fine_separate</a></span>()</pre></body></html></div>
 <pre><code>##  [1] "513300" "513301" "513302" "513303" "513304" "513305" "513306" "513307"
@@ -160,12 +161,48 @@
 ## [41] "513350" "513351" "513352" "513353" "513354" "513355" "513356" "513357"
 ## [49] "513360" "513361" "513362" "513363" "513364" "513365" "513366" "513367"
 ## [57] "513370" "513371" "513372" "513373" "513374" "513375" "513376" "513377"</code></pre>
-<div class="sourceCode" id="cb19"><html><body><pre class="r"><span class="co"># 隣接するメッシュコードを同じスケールで返します</span>
+<div class="sourceCode" id="cb20"><html><body><pre class="r"><span class="co"># 隣接するメッシュコードを同じスケールで返します</span>
 <span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="kw">mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="../reference/neighbor_mesh.html">neighbor_mesh</a></span>()</pre></body></html></div>
 <pre><code>## [1] "5032" "5033" "5034" "5132" "5133" "5134" "5232" "5233" "5234"</code></pre>
-<div class="sourceCode" id="cb21"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="fl">0.5</span>) <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb22"><html><body><pre class="r"><span class="fu"><a href="../reference/coords_to_mesh.html">coords_to_mesh</a></span>(<span class="fl">133</span>, <span class="fl">34</span>, <span class="fl">0.5</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="../reference/neighbor_mesh.html">neighbor_mesh</a></span>()</pre></body></html></div>
+<pre><code>## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar
+## although coordinates are longitude/latitude, st_relate_pattern assumes that they are planar</code></pre>
 <pre><code>## [1] "503277994" "503370903" "503370904" "513207092" "513207094" "513300001"
 ## [7] "513300002" "513300003" "513300004"</code></pre>
 </div>
@@ -173,7 +210,7 @@
 <h4 class="hasAnchor">
 <a href="#%E9%83%BD%E9%81%93%E5%BA%9C%E7%9C%8C%E5%8D%98%E4%BD%8D%E3%81%A7%E3%81%AE%E5%9F%BA%E6%BA%96%E5%9C%B0%E5%9F%9F%E3%83%A1%E3%83%83%E3%82%B7%E3%83%A5%E3%81%AE%E6%8F%8F%E7%94%BB" class="anchor"></a>都道府県単位での基準地域メッシュの描画</h4>
 <p><strong>jpmesh</strong>では、都道府県および市区町村名を含んだ基準地域メッシュのデータセットを用意しています。これを利用することで、都道府県や市区町村単位での地域メッシュを扱うことができます。</p>
-<div class="sourceCode" id="cb23"><html><body><pre class="r"><span class="fu"><a href="../reference/administration_mesh.html">administration_mesh</a></span>(<span class="kw">code</span> <span class="kw">=</span> <span class="fl">33</span>, <span class="kw">to_mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>) <span class="kw">%&gt;%</span>
+<div class="sourceCode" id="cb25"><html><body><pre class="r"><span class="fu"><a href="../reference/administration_mesh.html">administration_mesh</a></span>(<span class="kw">code</span> <span class="kw">=</span> <span class="fl">33</span>, <span class="kw">to_mesh_size</span> <span class="kw">=</span> <span class="fl">80</span>) <span class="kw">%&gt;%</span>
   <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>() <span class="kw">%&gt;%</span>
   <span class="kw pkg">knitr</span><span class="kw ns">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="kw">format</span> <span class="kw">=</span> <span class="st">"markdown"</span>)</pre></body></html></div>
 <table class="table">
@@ -217,14 +254,14 @@
 <div id="session-information" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-information" class="anchor"></a>Session Information</h2>
-<div class="sourceCode" id="cb24"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
-<pre><code>## R version 3.6.3 (2020-02-29)
-## Platform: x86_64-apple-darwin15.6.0 (64-bit)
-## Running under: macOS Catalina 10.15.3
+<div class="sourceCode" id="cb26"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
+<pre><code>## R version 4.0.0 (2020-04-24)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Catalina 10.15.4
 ## 
 ## Matrix products: default
-## BLAS:   /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRblas.0.dylib
-## LAPACK: /Library/Frameworks/R.framework/Versions/3.6/Resources/lib/libRlapack.dylib
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRblas.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.0/Resources/lib/libRlapack.dylib
 ## 
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -233,22 +270,23 @@
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] purrr_0.3.3       sf_0.8-1          jpmesh_1.1.3.9000
+## [1] purrr_0.3.4       sf_0.9-3          jpmesh_1.2.1.9000
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.4         highr_0.8          pillar_1.4.3       compiler_3.6.3    
-##  [5] later_1.0.0        class_7.3-15       tools_3.6.3        digest_0.6.25     
-##  [9] tibble_2.1.3       evaluate_0.14      memoise_1.1.0      pkgconfig_2.0.3   
-## [13] rlang_0.4.5        cli_2.0.2          shiny_1.4.0.2      DBI_1.1.0         
-## [17] crosstalk_1.1.0.1  yaml_2.2.1         pkgdown_1.4.1.9000 xfun_0.12         
-## [21] fastmap_1.0.1      e1071_1.7-3        stringr_1.4.0      knitr_1.28        
-## [25] vctrs_0.2.4        desc_1.2.0         fs_1.3.2           htmlwidgets_1.5.1 
-## [29] classInt_0.4-2     rprojroot_1.3-2    leaflet_2.0.3      grid_3.6.3        
-## [33] glue_1.3.2         R6_2.4.1           fansi_0.4.1        rmarkdown_2.1     
-## [37] magrittr_1.5       units_0.6-6        backports_1.1.5    promises_1.1.0    
-## [41] htmltools_0.4.0    MASS_7.3-51.5      assertthat_0.2.1   mime_0.9          
-## [45] xtable_1.8-4       httpuv_1.5.2       utf8_1.1.4         KernSmooth_2.23-16
-## [49] stringi_1.4.6      miniUI_0.1.1.1     crayon_1.3.4</code></pre>
+##  [1] Rcpp_1.0.4.11      highr_0.8          pillar_1.4.4       compiler_4.0.0    
+##  [5] later_1.0.0        class_7.3-16       tools_4.0.0        digest_0.6.25     
+##  [9] lifecycle_0.2.0    tibble_3.0.1       evaluate_0.14      memoise_1.1.0     
+## [13] pkgconfig_2.0.3    rlang_0.4.6        cli_2.0.2          shiny_1.4.0.2     
+## [17] DBI_1.1.0          crosstalk_1.1.0.1  yaml_2.2.1         pkgdown_1.5.1.9000
+## [21] xfun_0.14          fastmap_1.0.1      e1071_1.7-3        stringr_1.4.0     
+## [25] knitr_1.28         vctrs_0.3.0        desc_1.2.0         fs_1.4.1          
+## [29] htmlwidgets_1.5.1  classInt_0.4-3     rprojroot_1.3-2    leaflet_2.0.3     
+## [33] grid_4.0.0         glue_1.4.1         R6_2.4.1           fansi_0.4.1       
+## [37] rmarkdown_2.2      magrittr_1.5       ellipsis_0.3.1     units_0.6-6       
+## [41] backports_1.1.7    promises_1.1.0     htmltools_0.4.0    MASS_7.3-51.5     
+## [45] assertthat_0.2.1   mime_0.9           xtable_1.8-4       httpuv_1.5.3.1    
+## [49] utf8_1.1.4         KernSmooth_2.23-16 stringi_1.4.6      miniUI_0.1.1.1    
+## [53] crayon_1.3.4</code></pre>
 </div>
   </div>
 
@@ -267,7 +305,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>

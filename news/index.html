@@ -79,7 +79,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">jpmesh</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.1.3.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.2.1.9000</span>
       </span>
     </div>
 
@@ -141,6 +141,23 @@
 <h1 class="page-header" data-toc-text="development version">
 <a href="#jpmesh-development-version" class="anchor"></a>jpmesh (development version)<small> Unreleased </small>
 </h1>
+</div>
+    <div id="jpmesh-121-2020-05-06" class="section level1">
+<h1 class="page-header" data-toc-text="1.2.1">
+<a href="#jpmesh-121-2020-05-06" class="anchor"></a>jpmesh 1.2.1 (2020-05-06)<small> 2020-05-06 </small>
+</h1>
+<ul>
+<li>Meshcode evaluation is now more stringent.
+<ul>
+<li>Fixed a problem where a non-existent mesh code would return an incorrect value when given as input (<a href="https://github.com/uribo/jpmesh/issues/45"><a href='https://github.com/uribo/jpmesh/issues/45'>#45</a></a>).</li>
+</ul>
+</li>
+</ul>
+</div>
+    <div id="jpmesh-120-2020-03-26" class="section level1">
+<h1 class="page-header" data-toc-text="1.2.0">
+<a href="#jpmesh-120-2020-03-26" class="anchor"></a>jpmesh 1.2.0 (2020-03-26)<small> 2020-03-26 </small>
+</h1>
 <ul>
 <li>API changes to functions that take <code>mesh_size</code> (<a href="https://github.com/uribo/jpmesh/issues/35"><a href='https://github.com/uribo/jpmesh/issues/35'>#35</a></a>). It has been changed to a numeric value in km unit instead of the mesh size string.</li>
 </ul>
@@ -154,6 +171,10 @@
 <span class="fu"><a href="../reference/converter.html">mesh_convert</a></span>(<span class="st">"52350432"</span>, <span class="fl">80</span>)
 <span class="co"># Scale down</span>
 <span class="fu"><a href="../reference/converter.html">mesh_convert</a></span>(<span class="st">"52350432"</span>, <span class="fl">0.500</span>)</pre></div>
+<ul>
+<li>
+<code><a href="../reference/export_meshes.html">meshcode_sf()</a></code> export data.frame to sf which include meshcode variable.</li>
+</ul>
 <div id="improvement" class="section level2">
 <h2 class="hasAnchor">
 <a href="#improvement" class="anchor"></a>Improvement</h2>
@@ -222,7 +243,7 @@
 <li>
 <code><a href="../reference/is_mesh.html">is_meshcode()</a></code>, <code><a href="../reference/is_mesh.html">is_corner()</a></code>… Predict meshcode format and positions for utility and certain.</li>
 <li>
-<code><a href="../reference/rmesh.html">rmesh()</a></code>…</li>
+<code><a href="../reference/rmesh.html">rmesh()</a></code>… Generate random sample meshcode.</li>
 <li>Rename <code><a href="../reference/neighbor_mesh.html">find_neighbor_mesh()</a></code> to <code><a href="../reference/neighbor_mesh.html">neighbor_mesh()</a></code> and separate features (not export functions).</li>
 <li><code><a href="../reference/export_meshes.html">export_meshes()</a></code></li>
 </ul>
@@ -347,7 +368,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.9000.</p>
 </div>
 
       </footer>
